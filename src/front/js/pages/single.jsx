@@ -6,12 +6,11 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);
-	const { theid } = useParams();
+	const parametros = useParams();
 
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[theid].title}</h1>
-			<img src={rigoImageUrl} />
+			<h1 className="display-4">This will show the demo element: {store.demo[parametros.theid].title}</h1>
 			<hr className="my-4" />
 
 			<Link to="/">
