@@ -5,8 +5,9 @@
     color: brown;
 }
 .imgnavbar{
-    width:  100px;
-    height: 100px;
+    padding-top: 15%;
+    width:  80px;
+    height: 80px;
 }
 .favorites{
     font-size: 120%;

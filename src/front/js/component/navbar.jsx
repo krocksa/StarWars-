@@ -15,7 +15,7 @@ export const Navbar = () => {
 				</Link>
 				<div className="ml-auto">
 					{/* <Link to="/demo"> */}
-						<button onClick={() => navigate('/demo')} className="btn btn-primary">Favorites</button>
+						<button onClick={() => navigate('/demo')} className="btn btn-primary favorites">Favorites</button>
 					{/* </Link> */}
 				</div>
 			</div>
