@@ -9,11 +9,13 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+					<div className="imgnavbar">
+					<img src="https://th.bing.com/th/id/OIP.zLHXJbX9jteXJ6bZT32ZbwHaES?pid=ImgDet&rs=1" class="img-thumbnail" alt="" />
+					</div>
 				</Link>
 				<div className="ml-auto">
 					{/* <Link to="/demo"> */}
-						<button onClick={() => navigate('/demo')} className="btn btn-primary">Check the Context in action</button>
+						<button onClick={() => navigate('/demo')} className="btn btn-primary">Favorites</button>
 					{/* </Link> */}
 				</div>
 			</div>
