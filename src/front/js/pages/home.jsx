@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link, useNavigate } from "react-router-dom";
+import Card from "../component/card.jsx";
 
 export const Home = () => {
 	//const { store, actions } = useContext(Context);
@@ -9,7 +10,7 @@ export const Home = () => {
 	const [ planet, setPlanet ] = useState([]);
 
 	const navigate = useNavigate();
-
+	
 	
 	const urlpersonajes = 'https://swapi.dev/api/people';
 
@@ -30,27 +31,16 @@ export const Home = () => {
 				Characters
 			</h1>
 		
-			<div className="d-flex flex-row flex-nowrap overflow-auto card">
+			<div >
 			{
 				people.map((personaje,index)=>{
 					return(
-						<div className="col-10 border" key={index} style={{width:"250px", height:"350px", margin: "10px"}}>
-							<img src={personaje.img} className="card-img-top" alt=""></img>
-							<div className="card-body">
-								<h4 className="card-title">{personaje.name}</h4>
-								<div className="card-text">
-								Gender: {personaje.gender} <br />
-								Hair Color : {personaje.hair_color} <br />
-								Eye-Color : {personaje.eye_color}
-								</div>
-								<div className="ml-auto">
-									{/* <Link to="/demo"> */}
-									<br />
-										<button onClick={() => navigate("/demo")} className="btn btn-primary">Learn More</button>
-									{/* </Link> */}
-								</div>
-							</div>
-						</div>
+						<Card className="d-flex flex-row flex-nowrap overflow-auto card" style={{width:"250px", height:"350px", margin: "10px"}}
+						key={personaje.name}
+						detail={personaje}
+						type="people"
+						id={index + 1}
+						/>
 					)
 				})
 			}
