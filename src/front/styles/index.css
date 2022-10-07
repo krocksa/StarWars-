@@ -1,8 +1,16 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+body{
+    background: gray;
+}
 .titulo{
     color: brown;
+    padding-left: 9%;
+}
+.card{
+    padding-left: 8.3%;
+    background: gray;
 }
 .imgnavbar{
     padding-top: 15%;

@@ -6,42 +6,85 @@ import { Link, useNavigate } from "react-router-dom";
 export const Home = () => {
 	//const { store, actions } = useContext(Context);
 	const [ people, setPeople ] = useState([]);
+	const [ planet, setPlanet ] = useState([]);
+
 	const navigate = useNavigate();
 
 	
-	const url = 'https://swapi.dev/api/people';
+	const urlpersonajes = 'https://swapi.dev/api/people';
 
 	useEffect(()=> {
-			fetch(url).then(response => response.json()).then(data => setPeople(data.results))
+			fetch(urlpersonajes).then(response => response.json()).then(data => setPeople(data.results))
+	},[])
+
+	const urlplanetas = 'https://swapi.dev/api/planets';
+
+	useEffect(()=> {
+			fetch(urlplanetas).then(response => response.json()).then(data => setPlanet(data.results))
 	},[])
 
 	return (
 		<>
+		<div className="personajes">
 			<h1 className="titulo">
 				Characters
 			</h1>
 		
-			<div className="d-flex flex-row flex-nowrap overflow-auto">
+			<div className="d-flex flex-row flex-nowrap overflow-auto card">
 			{
 				people.map((personaje,index)=>{
 					return(
 						<div className="col-10 border" key={index} style={{width:"250px", height:"350px", margin: "10px"}}>
-							<img src={personaje.url} class="card-img-top" alt=""></img>
+							<img src={personaje.img} className="card-img-top" alt=""></img>
 							<div className="card-body">
-								<h5 className="card-title">{personaje.name}</h5>
-								<p className="card-text">Gender: {personaje.gender}</p>
-								<p className="card-text">Hair Color : {personaje.hair_color}</p>
-								<p className="card-text">Eye-Color : {personaje.eye_color}</p>
+								<h4 className="card-title">{personaje.name}</h4>
+								<div className="card-text">
+								Gender: {personaje.gender} <br />
+								Hair Color : {personaje.hair_color} <br />
+								Eye-Color : {personaje.eye_color}
+								</div>
 								<div className="ml-auto">
 									{/* <Link to="/demo"> */}
-										<button onClick={() => navigate('/demo')} className="btn btn-primary">Check the Context in action</button>
+									<br />
+										<button onClick={() => navigate("/demo")} className="btn btn-primary">Learn More</button>
 									{/* </Link> */}
 								</div>
 							</div>
 						</div>
 					)
 				})
-				}
+			}
+			</div>
+			</div>
+			<div className="planetas">
+			<h1 className="titulo">
+				Planets
+			</h1>
+		
+			<div className="d-flex flex-row flex-nowrap overflow-auto card">
+			{
+				planet.map((planeta,index)=>{
+					return(
+						<div className="col-10 border" key={index} style={{width:"250px", height:"350px", margin: "10px"}}>
+							<img src={planeta.url} className="card-img-top" alt=""></img>
+							<div className="card-body">
+								<h4 className="card-title">{planeta.name}</h4>
+								<div className="card-text">
+								Population: {planeta.population} <br />
+								Terrain : {planeta.terrain} <br />
+								</div>
+								<div className="ml-auto">
+									{/* <Link to="/demo"> */}
+									<br />
+										<button onClick={() => navigate("/demo")} className="btn btn-primary">Learn More</button>
+									{/* </Link> */}
+								</div>
+							</div>
+						</div>
+					)
+				})
+			}
+			</div>
 			</div>
 			</>
 	);};
