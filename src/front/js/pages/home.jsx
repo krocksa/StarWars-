@@ -31,11 +31,11 @@ export const Home = () => {
 				Characters
 			</h1>
 		
-			<div >
+			<div className="d-flex flex-row flex-nowrap overflow-auto card">
 			{
 				people.map((personaje,index)=>{
 					return(
-						<Card className="d-flex flex-row flex-nowrap overflow-auto card" style={{width:"250px", height:"350px", margin: "10px"}}
+						<Card
 						key={personaje.name}
 						detail={personaje}
 						type="people"
