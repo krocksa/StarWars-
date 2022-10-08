@@ -7,17 +7,30 @@ function BasicExample({ detail, id, type }) {
     
     const navigate = useNavigate();
 
+    // if (type == 'people') {
+  
+    //   <Card.Text className='agregar'>
+    //       Height : {detail.height} <br /> Hair Color : {detail.hair_color} <br /> Eye Color : {detail.eye_color}
+    //     </Card.Text>
+
+    // } else {
+    //   <Card.Text className='agregar'>
+    //   Terrain : {detail.terrain} <br /> Population : {detail.population}
+    //     </Card.Text>
+    // }
+
   return (
-    <Card className="col-10" style={{width:"250px", height:"350px", margin: "10px"}}>
-      <Card.Img
+    <Card className='col-10' style={{width:"250px", height:"450px", margin: "10px"}}>
+      <Card.Img className='imgcard'
        variant="top" 
-       src={'https://starwars-visualguide.com/assets/img/8{
-        type == "people" ? "characters" : type
-      }/${id}.jpg'}
+       src={`https://starwars-visualguide.com/assets/img/${ 
+        type == "people" ? "characters" : type 
+        }/${id}.jpg`}
         />
       <Card.Body>
         <Card.Title>{detail.name}</Card.Title>
-        <Card.Text>Height : {detail.height}</Card.Text>
+        <Card.Text className='agregar'>
+        </Card.Text>
         <Button variant="primary" onClick={ () => navigate(`/${type}/${id}`)}
         >Learn More</Button>
       </Card.Body>

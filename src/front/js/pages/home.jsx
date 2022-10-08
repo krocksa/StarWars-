@@ -11,7 +11,6 @@ export const Home = () => {
 
 	const navigate = useNavigate();
 	
-	
 	const urlpersonajes = 'https://swapi.dev/api/people';
 
 	useEffect(()=> {
@@ -55,22 +54,12 @@ export const Home = () => {
 			{
 				planet.map((planeta,index)=>{
 					return(
-						<div className="col-10 border" key={index} style={{width:"250px", height:"350px", margin: "10px"}}>
-							<img src={planeta.url} className="card-img-top" alt=""></img>
-							<div className="card-body">
-								<h4 className="card-title">{planeta.name}</h4>
-								<div className="card-text">
-								Population: {planeta.population} <br />
-								Terrain : {planeta.terrain} <br />
-								</div>
-								<div className="ml-auto">
-									{/* <Link to="/demo"> */}
-									<br />
-										<button onClick={() => navigate("/demo")} className="btn btn-primary">Learn More</button>
-									{/* </Link> */}
-								</div>
-							</div>
-						</div>
+						<Card
+						key={planeta.name}
+						detail={planeta}
+						type="planets"
+						id={index + 1}
+						/>
 					)
 				})
 			}
