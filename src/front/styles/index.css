@@ -4,13 +4,30 @@
 body{
     background: gray;
 }
+.navitulo{
+    text-align: center;
+    color: #ffae00;
+    font-size: 120%;
+}
+.imgdetails{
+    width: 400px;
+    height: 350px;
+}
+.cardDetail{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    font-size: 150%;
+    color: #7e2121;
+}
 .titulo{
-    color: brown;
-    padding-left: 9%;
+    color: #b32e2e;
+    padding-left: 8%;
 }
 .card{
     
     background: gray;
+    margin-left: 8.3%;
 }
 .imgnavbar{
     padding-top: 15%;
@@ -22,5 +39,15 @@ body{
 }
 .imgcard{
     width: 250px;
-    height: 250px;
+    height: 260px;
+}
+.detalles{
+    text-align: center;
+}
+.mini-details{
+    text-align: center;
+    margin: auto;
+}
+.corazon{
+    font-size: 120%;
 }
