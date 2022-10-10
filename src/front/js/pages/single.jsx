@@ -65,23 +65,25 @@ export const Single = (props) => {
           {details.name}
         </div>
         <div className="mini-details">
-			{type == 'people' ? <h4>Birth Year</h4> : <h4>Terrain</h4>}
-			{type == 'people' ? details.birth_year : details.terrain}
-        </div>
-		{type == 'people' ? <h4>Gender</h4> : <h4>Population</h4> }
-		{type == 'people' ? details.gender : details.population}
-        <div className="mini-details">
-		{type == 'people' ? <h4>Height</h4> : <h4>Climate</h4> }
-		{type == 'people' ? details.height : details.climate}
+          {type == "people" ? <h4>Birth Year</h4> : <h4>Terrain</h4>}
+          {type == "people" ? details.birth_year : details.terrain}
         </div>
         <div className="mini-details">
-		{type == 'people' ? <h4>Skin Color</h4> : <h4>Gravity</h4> }
-		{type == 'people' ? details.skin_color : details.gravity }
+          {type == "people" ? <h4>Gender</h4> : <h4>Population</h4>}
+          {type == "people" ? details.gender : details.population}
         </div>
-		<div className="mini-details">
-		{type == 'people' ? <h4>Eye Color</h4> : <h4>Rotation Period</h4>}
-		{type == 'people' ? details.eye_color : details.rotation_period }
-		</div>
+        <div className="mini-details">
+          {type == "people" ? <h4>Height</h4> : <h4>Climate</h4>}
+          {type == "people" ? details.height : details.climate}
+        </div>
+        <div className="mini-details">
+          {type == "people" ? <h4>Skin Color</h4> : <h4>Gravity</h4>}
+          {type == "people" ? details.skin_color : details.gravity}
+        </div>
+        <div className="mini-details">
+          {type == "people" ? <h4>Eye Color</h4> : <h4>Rotation Period</h4>}
+          {type == "people" ? details.eye_color : details.rotation_period}
+        </div>
       </Stack>
     </>
   );

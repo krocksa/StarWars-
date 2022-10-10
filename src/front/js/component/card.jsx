@@ -1,6 +1,8 @@
+import { Height } from "@mui/icons-material";
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { render } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -35,9 +37,20 @@ function BasicExample({ detail, id, type }) {
       <Card.Body className="detalles">
         <Card.Title>{detail.name}</Card.Title>
         <Card.Text>
-          Height : {detail.height} <br />
-          Hair Color : {detail.hair_color} <br />
-          Terrain : {detail.population}
+          <strong className="card-details">
+            {type == "people" ? "Height: " : "Population: "}
+            {type == "people" ? detail.height : detail.population}
+          </strong>
+
+          <strong className="card-details">
+            {type == "people" ? "Hair Color: " : "Terrain: "}
+            {type == "people" ? detail.hair_color : detail.terrain}
+          </strong>
+
+          <strong className="card-details">
+            {type == "people" && "Eye Color: "}
+            {type == "people" && detail.eye_color}
+          </strong>
         </Card.Text>
         <Button variant="primary" onClick={() => navigate(`/${type}/${id}`)}>
           Learn More
@@ -47,9 +60,9 @@ function BasicExample({ detail, id, type }) {
           onClick={() => actions.manageFavorites(detail.name)}
         >
           {actions.isIn(store.favorites, detail.name) ? (
-            <i class="fas fa-heart"></i>
+            <i className="fas fa-heart"></i>
           ) : (
-            <i class="far fa-heart"></i>
+            <i className="far fa-heart"></i>
           )}
         </Button>
       </Card.Body>

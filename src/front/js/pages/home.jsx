@@ -15,12 +15,9 @@ export const Home = () => {
         <div className="d-flex flex-row flex-nowrap overflow-auto card">
           {store.people.map((personaje, index) => {
             return (
-              <Card
-                key={personaje.name}
-                detail={personaje}
-                type="people"
-                id={index + 1}
-              />
+              <div key={personaje.name}>
+                <Card detail={personaje} type="people" id={index + 1} />
+              </div>
             );
           })}
         </div>
@@ -31,18 +28,12 @@ export const Home = () => {
         <div className="d-flex flex-row flex-nowrap overflow-auto card">
           {store.planet.map((planeta, index) => {
             return (
-              <Card
-                key={planeta.name}
-                detail={planeta}
-                type="planets"
-                id={index + 1}
-              />
+              <div key={planeta.name}>
+                <Card detail={planeta} type="planets" id={index + 1} />
+              </div>
             );
           })}
         </div>
-        {store.favorites.map((favorite) => {
-          return <h1 key={favorite.name}>{favorite.name}</h1>;
-        })}
       </div>
     </>
   );

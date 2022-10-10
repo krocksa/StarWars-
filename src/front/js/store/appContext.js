@@ -24,6 +24,13 @@ const injectContext = (PassedComponent) => {
     useEffect(() => {
       state.actions.getPeople();
       state.actions.getPlanets();
+
+      let favorites = JSON.parse(localStorage.getItem("favorites"));
+      if (favorites != null) {
+        for (let favorite of favorites) {
+          state.actions.manageFavorites(favorite.name);
+        }
+      }
       /**
        * EDIT THIS!
        * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime

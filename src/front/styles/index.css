@@ -51,3 +51,9 @@ body{
 .corazon{
     font-size: 120%;
 }
+.mas{
+    display: none;
+}
+.card-details{
+    display: flex;
+}
