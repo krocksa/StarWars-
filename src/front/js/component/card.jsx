@@ -10,18 +10,6 @@ function BasicExample({ detail, id, type }) {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
-  // if (type == 'people') {
-
-  //   <Card.Text className='agregar'>
-  //       Height : {detail.height} <br /> Hair Color : {detail.hair_color} <br /> Eye Color : {detail.eye_color}
-  //     </Card.Text>
-
-  // } else {
-  //   <Card.Text className='agregar'>
-  //   Terrain : {detail.terrain} <br /> Population : {detail.population}
-  //     </Card.Text>
-  // }
-
   return (
     <Card
       className="col-10"
